@@ -6,7 +6,7 @@ Welcome to the hands-on labs for **Session 3: Agents, Tools & the ReAct Loop**.
 
 You'll use **GitHub Copilot** — an AI coding assistant — to explore how agents think, act, and extend their capabilities.
 
-**Time:** ~45 minutes across 4 micro-labs
+**Time:** ~55 minutes across 5 micro-labs
 
 ## How It Works
 
@@ -20,9 +20,9 @@ Build a working web app without writing any code — just by describing what you
 
 > In the Copilot side panel, type: `/lab1`
 
-## Lab 2 — Agent Skills (10 min)
+## Lab 2 — AI Data Analysis (10 min)
 
-See how a text file changes an AI's behavior — inspect a skill, tweak it, see the difference.
+Analyze sales data by asking questions in plain English. Find the hidden anomaly.
 
 > In the Copilot side panel, type: `/lab2`
 
@@ -38,6 +38,12 @@ Let Copilot browse the web, click buttons, and extract live information.
 
 > In the Copilot side panel, type: `/lab4`
 
+## Lab 5 — How These Labs Were Built (10 min)
+
+Go behind the curtain — see the prompt files that power these labs and create your own.
+
+> In the Copilot side panel, type: `/lab5`
+
 ## Wrap-Up
 
 Congratulations! You've experienced the full agent stack:
@@ -45,9 +51,10 @@ Congratulations! You've experienced the full agent stack:
 | Lab | What you saw |
 |-----|-------------|
 | Lab 1 | Agent as **builder** — code generation + live preview |
-| Lab 2 | Agent with **skills** — packaged expertise, reusable |
+| Lab 2 | Agent as **analyst** — data analysis, skills, error recovery |
 | Lab 3 | Agent with **custom tools** — MCP protocol, extensibility |
 | Lab 4 | Agent with **browser** — web automation, live information |
+| Lab 5 | Agent as **guide** — prompt files, reusable experiences |
 
 **The punchline:** Same model for everyone. Your competitive edge = **context engineering** + **tools & skills**.
 

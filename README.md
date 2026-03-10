@@ -9,16 +9,17 @@
 | Lab | Topic | Time | S3 Concept |
 |-----|-------|------|------------|
 | **Lab 1** | Vibe-code a web app | 10 min | Agent loop, tool use, code generation |
-| **Lab 2** | Agent skills — inspect, tweak, test | 10 min | Skills as packaged expertise |
+| **Lab 2** | AI data analysis + skills | 10 min | Data analysis, skills as packaged expertise |
 | **Lab 3** | Build your own MCP server | 15 min | MCP protocol, custom tools, agent extensibility |
 | **Lab 4** | Give Copilot a browser (Playwright MCP) | 10 min | Pre-built MCP servers, browser automation |
+| **Lab 5** | How these labs were built | 10 min | Prompt files, reusable guided experiences |
 
 ## How to Start
 
 Open the **GitHub Copilot side panel** in **Agent** mode and type the slash command for each lab:
 
 ```
-/lab1    /lab2    /lab3    /lab4
+/lab1    /lab2    /lab3    /lab4    /lab5
 ```
 
 Copilot guides you through everything step by step. No coding experience needed.

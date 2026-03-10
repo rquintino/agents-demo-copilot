@@ -1,8 +1,8 @@
-# Lab 2 — Agent Skills (10 min)
+# Lab 2 — AI Data Analysis (10 min)
 
 ## Overview
 
-See how a simple text file changes the way an AI behaves — like giving it a **job description**. You'll watch a pre-built skill in action, open the file to see how it works, and make a change to see the effect.
+Analyze real sales data **just by asking questions in plain English**. Copilot will write the code, run the analysis, and create charts — you focus on the business insights. There's a hidden anomaly in the data. Can AI find it? Along the way, you'll peek behind the curtain to see how a "skill" file shapes the AI's behavior.
 
 ## How to Start
 

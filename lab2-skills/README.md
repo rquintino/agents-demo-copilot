@@ -1,15 +1,10 @@
-# Lab 2 — Agent Skills
+# Lab 2 — AI Data Analysis
 
-This lab teaches how GitHub Copilot custom instructions and prompt files work.
+This lab contains sales data in `data/sales_data.csv`.
+Copilot will analyze it using Python (pandas, matplotlib) and show results to the student.
 
-There is a pre-built skill in `.github/copilot-instructions.md` (repo-level custom instructions).
-The student will:
-1. Read and understand the existing custom instructions
-2. See them activate in Copilot on a relevant prompt
-3. Create their own reusable prompt file from scratch
+The lab also demonstrates how the Sales Analyst skill in `.github/copilot-instructions.md` shapes Copilot's analysis style.
 
-GitHub Copilot supports two mechanisms for "skills":
-- **Custom Instructions**: `.github/copilot-instructions.md` — always loaded for the repo
-- **Prompt Files**: `.github/prompts/*.prompt.md` — reusable prompt templates invoked on demand
-
-Use the Copilot side panel to test how instructions shape agent behavior.
+When creating charts, save them as PNG files in this directory.
+Use Python 3 with pandas and matplotlib.
+If a library is missing, install it.
