@@ -66,6 +66,12 @@ Go behind the curtain — see the prompt files that power these labs and create 
 
 > In the Copilot side panel, type: `/lab5`
 
+## Bonus — Data Analysis → React Dashboard (15 min)
+
+Take the same sales data from Lab 2 and build a rich, interactive React dashboard instead of a Jupyter notebook. Same AI, same data, same skill — completely different output.
+
+> In the Copilot side panel, type: `/lab-data-dashboard`
+
 ## Wrap-Up
 
 Congratulations! You've experienced the full agent stack:
@@ -77,6 +83,7 @@ Congratulations! You've experienced the full agent stack:
 | Lab 3 | Agent with **custom tools** — MCP protocol, extensibility |
 | Lab 4 | Agent with **browser** — web automation, live information |
 | Lab 5 | Agent as **guide** — prompt files, reusable experiences |
+| Bonus | Agent as **dashboard builder** — React app from raw data |
 
 **The punchline:** Same model for everyone. Your competitive edge = **context engineering** + **tools & skills**.
 
