@@ -1,124 +1,75 @@
-# Lab 5 — Playwright MCP: Give Copilot a Browser (10 min)
+# Lab 5 — Give Copilot a Browser (10 min)
 
 ## Objective
 
-Connect the **Playwright MCP server** to GitHub Copilot so it can browse the web, interact with pages, and take screenshots — turning it into a web-aware agent.
+Let Copilot **browse the web** — navigate pages, click buttons, fill forms, and extract information — using the Playwright MCP server.
 
-## What You'll Learn
+## What You'll See
 
-- How to use a **pre-built MCP server** (vs. building your own in Lab 3)
-- How agents interact with live web pages through tools
-- The difference between "reading code" and "seeing the running app"
+- An AI agent controlling a real web browser
+- How pre-built MCP servers add powerful capabilities with zero code
+- The ReAct loop in action: navigate → observe → interact → observe again
 
-## Background: Why Give an Agent a Browser?
+## Background
 
-In Lab 3 you built custom MCP tools from scratch. But the MCP ecosystem also has **ready-made servers** for common capabilities. Playwright MCP is one of the most powerful — it gives any MCP-compatible agent full browser control.
+In Lab 3 you built custom tools from scratch. But the MCP ecosystem also has **ready-made tools** you can plug in. Playwright MCP gives any agent full browser control — no coding required.
 
-This matters because agents can now:
-- **Verify** their own work by looking at the running app
-- **Test** web pages by clicking, typing, and asserting
-- **Extract** information from live websites
-- **Automate** repetitive browser workflows
-
-## Prerequisites
-
-- Node.js 18+ (pre-installed in Codespaces)
-- GitHub Copilot in Agent mode
+The browser runs in the background (headless). Copilot "sees" the page as a structured description of what's on screen.
 
 ## Steps
 
-### 1. Check the MCP Configuration
+### 1. Browse a Web Page
 
-Open `.vscode/mcp.json` at the project root. You'll see that `playwright` is already registered:
-
-```json
-{
-  "servers": {
-    "playwright": {
-      "type": "stdio",
-      "command": "npx",
-      "args": ["@playwright/mcp@latest", "--headless"]
-    }
-  }
-}
-```
-
-The `--headless` flag is essential for Codespaces — there's no display, so the browser runs in the background. Copilot "sees" pages through **accessibility snapshots** (a structured text representation of the page).
-
-### 2. Take Your First Browse
-
-Open Copilot Chat, select **Agent** mode, and try:
+The Playwright MCP server is already configured. Open Copilot Chat in **Agent** mode and try:
 
 ```
-Navigate to https://example.com and describe what you see
+Navigate to https://example.com and describe what you see on the page
 ```
 
-Watch the tool calls — Copilot will use `browser_navigate` to open the page and `browser_snapshot` to read its contents.
+Watch the tool calls — Copilot opens a browser, loads the page, and reads its contents.
 
-### 3. Interact with a Web Page
+### 2. Interact with a Website
 
-Now try something interactive. Ask Copilot to use a search engine:
-
-```
-Go to https://en.wikipedia.org and search for "Model Context Protocol".
-Tell me the first paragraph of the article if it exists.
-```
-
-Notice how Copilot chains multiple tools: navigate, snapshot, click, type, snapshot again. This is the **ReAct loop in action** — each observation drives the next action.
-
-### 4. Test Your Lab 1 Web App (Optional)
-
-If you completed Lab 1 and have the dev server running (`pnpm dev` in `lab1-web-app`), ask Copilot to inspect it:
+Now try something that requires multiple steps:
 
 ```
-Navigate to http://localhost:5173 and take a screenshot.
-Describe the current state of the web app and suggest one UI improvement.
+Go to https://en.wikipedia.org and search for "Model Context Protocol". Tell me the first paragraph of the article if it exists.
 ```
 
-This is powerful — the agent can now **see its own work** and give visual feedback.
+Notice how Copilot chains actions: navigate → read page → click search → type → read results. Each observation drives the next action.
 
-### 5. Automate a Browser Workflow
-
-Ask Copilot to perform a multi-step workflow:
+### 3. Extract Real-Time Information
 
 ```
-Go to https://jsonplaceholder.typicode.com.
-Find the list of available endpoints, then navigate to the /users endpoint
-and tell me how many users are listed.
+Go to https://news.ycombinator.com and tell me the top 5 stories right now
 ```
 
-### 6. Explore Available Tools
+This is live data — the agent is reading the actual website, not using training data.
 
-Ask Copilot what browser tools are available:
+### 4. Test Your Lab 1 App (Optional)
+
+If your Lab 1 web app is still running, ask Copilot to look at it:
 
 ```
-What Playwright MCP tools do you have available? List them with a brief description.
+Navigate to http://localhost:5173 and take a screenshot. Describe what you see and suggest one improvement.
 ```
 
-Common tools include:
-- `browser_navigate` — Go to a URL
-- `browser_snapshot` — Get accessibility tree of the page
-- `browser_screenshot` — Capture a visual screenshot
-- `browser_click` — Click an element
-- `browser_type` — Type text into an input
-- `browser_select_option` — Select from a dropdown
-- `browser_go_back` / `browser_go_forward` — Navigation history
+The agent can now **see its own work** and give visual feedback.
 
-### 7. Your Challenge: Build a Web Check
+### 5. Try Your Own Task
 
-Come up with your own browser task. Ideas:
+Pick any public website and ask Copilot to interact with it:
 
-- **Status checker:** "Navigate to [any public URL] and tell me if it's up, what the page title is, and how many links are on the page"
-- **Form tester:** "Go to https://httpbin.org/forms/post and fill out the form with test data, then submit it"
-- **Content extractor:** "Go to https://news.ycombinator.com and tell me the top 5 stories right now"
+- `Go to https://httpbin.org/forms/post and fill out the form with test data, then submit it`
+- `Navigate to [any website] and tell me how many links are on the page`
+- `Go to https://jsonplaceholder.typicode.com and find out what API endpoints are available`
 
 ## Key Insight
 
-Pre-built MCP servers like Playwright turn your agent into a **web-capable autonomous system** — no custom code required. Combined with the custom tools from Lab 3, you can build agents that both call APIs *and* interact with UIs, closing the gap between what humans and agents can do.
+Pre-built MCP servers like Playwright give agents **new superpowers without writing code**. Combined with custom tools (Lab 3) and skills (Lab 2), you can build agents that reason, use internal tools, *and* interact with the web — closing the gap between what humans and AI can do.
 
-## Debrief Questions
+## Debrief
 
 - How does giving an agent a browser change what tasks you'd delegate to it?
-- What are the risks of letting an agent browse autonomously? How would you add guardrails?
-- Lab 3 was "build your own tools" — this lab is "use existing tools." When would you choose each approach?
-- How does this relate to **EU AI Act Article 14** (human oversight)? Should an agent be able to click "Submit" on a real form?
+- What are the risks of an agent browsing autonomously? What guardrails would you add?
+- Should an AI agent be able to click "Submit" on a real form? How does this relate to human oversight?
