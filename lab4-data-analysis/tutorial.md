@@ -2,51 +2,48 @@
 
 ## Objective
 
-Use GitHub Copilot to analyze a sales dataset — generating Python code, running it, fixing errors, and iterating.
+Use Copilot to **analyze a sales dataset** — just by asking questions in plain English.
 
-## What You'll Learn
+## What You'll See
 
-- How Copilot helps with data analysis workflows
-- The ReAct loop in action: generate code → run → observe results → iterate
-- How AI agents handle errors and recover
-
-## Prerequisites
-
-- Python 3 with `pandas` and `matplotlib` installed
-- If missing: `pip install pandas matplotlib`
+- An AI agent writing and running analysis code for you
+- How agents handle errors and self-correct
+- The ReAct loop: ask → code → run → observe → refine
 
 ## Steps
 
-### 1. Load and Explore the Data
+### 1. Explore the Data
 
-Open Copilot Chat and try:
+Open Copilot Chat (Agent mode) and paste:
 
 ```
-Load and describe the sales data in data/sales_data.csv. Tell me what columns are available and show basic statistics.
+Load the sales data from lab4-data-analysis/data/sales_data.csv and give me a summary. What columns are there? What are the key statistics?
 ```
 
-Copilot will generate Python code. Run it and review the output.
+Copilot will write Python code, run it, and show you the results.
 
-### 2. Analyze Growth Trends
+### 2. Ask a Business Question
 
 ```
 Which product category has the highest growth rate month over month? Show me a chart.
 ```
 
-Copilot should generate pandas code to calculate growth rates and matplotlib code for visualization. Run the code and check the chart.
+Watch Copilot generate the analysis and a visualization.
 
-### 3. Find Anomalies
+### 3. Find the Anomaly
 
-```
-Find any anomalies or outliers in the data. Are there any data points that look unusual?
-```
-
-Hint: There's an intentional anomaly in the dataset (look at May South Electronics — only 5 units sold vs. the usual 85-110). See if Copilot catches it.
-
-### 4. Generate a Business Summary
+There's an intentional error hidden in the data. Ask Copilot to find it:
 
 ```
-Create an executive summary of this data with key findings, trends, and recommendations. Format it nicely.
+Are there any anomalies or outliers in this data? Anything that looks unusual?
+```
+
+*(Hint: look at May, South region, Electronics — only 5 units sold vs. the usual 85-110.)*
+
+### 4. Get an Executive Summary
+
+```
+Create an executive summary of this data with key findings, trends, and recommendations. Format it for a leadership audience.
 ```
 
 ### 5. Bonus: Create a Dashboard
@@ -54,22 +51,15 @@ Create an executive summary of this data with key findings, trends, and recommen
 If you have time:
 
 ```
-Create a comprehensive dashboard with 4 charts: revenue by category, monthly trend, regional comparison, and profit margins. Save it as dashboard.png.
+Create a dashboard with 4 charts: revenue by category, monthly trend, regional comparison, and profit margins. Save it as dashboard.png.
 ```
 
-## Watch the ReAct Loop
+## The Pattern to Notice
 
-Pay attention to what happens when code doesn't work on the first try:
+Watch what happens when something goes wrong — a missing library, a column name error, unexpected data. Copilot **sees the error, diagnoses it, and fixes it**. This error-recovery cycle is exactly what autonomous agents do.
 
-1. Copilot **generates** analysis code
-2. You **run** it and get an error (or unexpected output)
-3. Copilot **observes** the error and suggests a fix
-4. You **iterate** until the analysis is correct
+## Debrief
 
-This error-recovery cycle is exactly what autonomous agents do.
-
-## Debrief Questions
-
-- How did Copilot handle errors in the analysis? Did it self-correct?
-- Did you catch the anomaly in the data? How would an agent flag this automatically?
-- How does the iterative coding loop relate to the ReAct pattern?
+- Did Copilot catch the anomaly? How would you use this for real business data?
+- What happened when the code didn't work the first time?
+- Would you trust an AI agent to do this analysis unsupervised? What guardrails would you want?

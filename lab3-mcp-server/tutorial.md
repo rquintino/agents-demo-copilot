@@ -2,96 +2,84 @@
 
 ## Objective
 
-Build a custom **MCP (Model Context Protocol)** tool server and connect it to GitHub Copilot in VS Code.
+Give Copilot **new abilities** by building custom tools it can use — using the MCP (Model Context Protocol) standard.
 
-## What You'll Learn
+## What You'll See
 
-- What MCP is and why it matters for AI agents
-- How to create tools that any MCP-compatible agent can use
-- How to connect custom tools to GitHub Copilot in VS Code
+- How to extend what an AI agent can do
+- How the **MCP protocol** works (think of it as USB for AI tools)
+- An agent discovering and using tools you created
 
 ## Background: What is MCP?
 
-**MCP** is the universal adapter between AI agents and tools. Instead of building custom integrations for each agent, you build one MCP server and any compatible agent can use it.
+**MCP** is a universal standard that connects AI agents to tools. Instead of building a different integration for every AI product, you build one MCP server and any compatible agent can use it.
 
-Think of it like USB — one standard connector, many devices.
-
-## Prerequisites
-
-- Python 3.10+
-- The `fastmcp` package (`pip install fastmcp`)
+Think of it like **USB** — one standard plug, many devices.
 
 ## Steps
 
-### 1. Read the Starter Server
+### 1. Explore the Starter Server
 
-Open `server.py` in this folder. You'll see three pre-built tools:
-
-- `greet` — A simple hello world to verify the connection
-- `calculate_discount` — Calculates prices after discount
-- `generate_invoice_number` — Creates unique invoice numbers
-
-Ask Copilot to explain the code:
+Open `server.py` in this folder. Don't worry about the code details — ask Copilot to explain it:
 
 ```
-Explain how this MCP server works and what each tool does
+Explain what this MCP server does in simple terms. What tools does it provide?
 ```
+
+You'll see it has three tools: a greeting tool, a discount calculator, and an invoice number generator.
 
 ### 2. Add a New Tool
 
-Ask Copilot to help you add a new tool:
+Ask Copilot to add a tool for you:
 
 ```
-Add a new tool called "company_lookup" that takes a company name and returns mock company data including name, industry, employees, and annual revenue
+Add a new tool called "company_lookup" that takes a company name and returns mock company data including name, industry, number of employees, and annual revenue
 ```
 
-Apply the suggestion. It should appear below the `# ADD YOUR OWN TOOLS` comment.
+Review and apply the suggestion.
 
-### 3. Add Another Tool (Your Choice)
+### 3. Install and Connect
 
-Try adding one more tool. Ideas:
+Ask Copilot to get the server running:
 
-- `currency_convert` — Convert between EUR, USD, GBP
-- `sentiment_analyze` — Analyze text sentiment (positive/negative/neutral)
-- `meeting_summary` — Generate a structured meeting summary from notes
-
-### 4. Install Dependencies and Test the Server
-
-```bash
-pip install -r requirements.txt
-python3 server.py
+```
+Install the requirements for lab3-mcp-server and start the server to verify it works
 ```
 
-The server runs on stdio transport (standard input/output), which is what VS Code expects.
+The server is already configured to connect to Copilot (see `.vscode/mcp.json`).
 
-### 5. Connect to GitHub Copilot
+### 4. Use Your Tools
 
-The MCP server is already configured in `.vscode/mcp.json` at the project root. This tells VS Code to start your server and make its tools available to Copilot.
-
-To verify it works, open Copilot Chat in **Agent mode** (select "Agent" from the mode dropdown) and try:
+Open a **new Copilot Chat** in Agent mode and try:
 
 ```
 Use the greet tool to say hello to me
 ```
 
-You should see Copilot discover and call your MCP tool.
-
-### 6. Use Your Custom Tools
-
-Now try prompts that use your new tools:
-
 ```
 Look up information about Acme Corp
-Calculate a 15% discount on a product that costs 250 euros
-Generate an invoice number for a new order
 ```
+
+```
+Calculate a 15% discount on a product that costs 250 euros
+```
+
+Watch how Copilot discovers and calls your custom tools automatically.
+
+### 5. Add Your Own Tool (Optional)
+
+Try creating one more tool — pick any idea:
+
+- A currency converter (EUR, USD, GBP)
+- A meeting summary generator
+- A sentiment analyzer
 
 ## Key Insight
 
-MCP is the **universal adapter** for AI tools. Build once, use with any agent. Your custom tools become first-class capabilities that Copilot (or any MCP client) can discover and use autonomously.
+MCP is the **universal adapter** for AI tools. Your custom tools become capabilities that any MCP-compatible agent can discover and use. This is how organizations give AI agents access to internal systems — safely and in a standardized way.
 
-## Debrief Questions
+## Debrief
 
-- What happens if the MCP server crashes or returns an error? How should agents handle tool failures?
-- What real tools would you want to expose via MCP in your organization?
-- How does MCP relate to the ReAct loop? (Hint: tools are what the agent "acts" with)
+- What tools would you want to expose to AI agents in your organization?
+- What are the risks of giving an agent access to real business tools?
+- How is this different from a traditional API? (Hint: the agent decides *when* to use the tool)

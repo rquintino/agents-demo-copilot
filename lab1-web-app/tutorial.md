@@ -2,77 +2,69 @@
 
 ## Objective
 
-Use GitHub Copilot to build and improve a React web app, then preview it live.
+Use GitHub Copilot to **build a web app from scratch** — just by describing what you want.
 
-## What You'll Learn
+## What You'll See
 
-- How Copilot assists with code generation in real time
-- The **ReAct loop** in practice: suggest → apply → run → observe → iterate
-- Using Copilot Chat and inline suggestions to build features fast
-
-## Prerequisites
-
-- VS Code with GitHub Copilot extension installed and authenticated
-- Node.js installed (v18+)
+- An AI agent writing code for you in real time
+- A live preview that updates as you make changes
+- The **Think → Act → Observe → Iterate** loop that all AI agents use
 
 ## Steps
 
-### 1. Open the Lab Folder
+### 1. Open Copilot Chat
 
-Open this folder (`lab1-web-app`) in VS Code.
+Click the **chat icon** in VS Code (or press `Ctrl+Shift+I`).
 
-You'll see a minimal React + Vite project with a starter `src/App.jsx`.
+Make sure **Agent** is selected in the mode dropdown at the top of the chat.
 
-### 2. Install Dependencies and Build a Todo App
+### 2. Ask Copilot to Build a Todo App
 
-Open **Copilot Chat** (Ctrl+Shift+I or the chat icon) and try:
+Paste this into the chat:
 
 ```
-Install dependencies and build a simple todo app with a modern UI
+Install the dependencies for lab1-web-app, then build me a simple todo app with a modern UI in the lab1-web-app folder. Start the dev server when done so I can preview it.
 ```
 
-Copilot will suggest edits to `src/App.jsx`. Review and apply the changes.
+Copilot will write the code, install what's needed, and start the app. When it's ready, open the **preview link** it provides (usually port 5173).
 
-Then install dependencies and start the dev server:
+### 3. Improve It with Follow-Up Prompts
 
-```bash
-pnpm install
-pnpm dev
+Now iterate — just ask for changes and watch the app update live:
+
+```
+Add a dark mode toggle
 ```
 
-Open your browser at **http://localhost:5173** to preview.
+```
+Add the ability to mark tasks as complete
+```
 
-### 3. Add Features
+```
+Make it look more professional with better styling
+```
 
-Try these follow-up prompts in Copilot Chat:
+Each time, Copilot writes the code and the app refreshes automatically.
 
-- `Add a dark mode toggle`
-- `Add the ability to mark tasks as complete`
-- `Add local storage so todos persist on refresh`
+### 4. Try Your Own Idea
 
-Apply each suggestion, save, and watch the app hot-reload.
+Ask for anything you want! Some ideas:
 
-### 4. Experiment Freely
+- `Add a priority field (high, medium, low) with color coding`
+- `Add a search bar to filter tasks`
+- `Make it look like a Notion-style app`
 
-Try your own ideas! Some suggestions:
+## The Pattern to Notice
 
-- `Add a filter to show only incomplete tasks`
-- `Make it look like a professional app with better styling`
-- `Add a due date field to each task`
-
-## Watch the ReAct Loop
-
-Notice the pattern:
+You just experienced the same loop AI agents use autonomously:
 
 1. **Think** — You describe what you want
-2. **Act** — Copilot generates code suggestions
-3. **Observe** — You preview the app in the browser
-4. **Iterate** — You refine with follow-up prompts
+2. **Act** — The agent writes code
+3. **Observe** — You see the result in the browser
+4. **Iterate** — You refine with another prompt
 
-This is the same loop AI agents use autonomously.
+## Debrief
 
-## Debrief Questions
-
-- How did Copilot assist in the coding process? Could you trace the suggestions?
-- What happened when a suggestion wasn't quite right? How did you iterate?
-- How does this compare to coding without AI assistance?
+- What surprised you about the process?
+- When did Copilot get it right on the first try? When did it need guidance?
+- How does this change who can build software?
