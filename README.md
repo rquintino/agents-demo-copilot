@@ -12,6 +12,7 @@
 | **Lab 2** | Create agent skills (COPILOT.md) | 10 min | Skills as packaged expertise, lazy-loading |
 | **Lab 3** | Build your own MCP server | 15 min | MCP protocol, custom tools, agent extensibility |
 | **Lab 4** | AI-powered data analysis | 10 min | Agent + data, error recovery, ReAct loop |
+| **Lab 5** | Playwright MCP — give Copilot a browser | 10 min | Pre-built MCP servers, browser automation, web-aware agents |
 
 ## Quick Start
 

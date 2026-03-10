@@ -3,6 +3,10 @@
     "lab3-server": {
       "command": "python3",
       "args": ["lab3-mcp-server/server.py"]
+    },
+    "playwright": {
+      "command": "npx",
+      "args": ["@playwright/mcp@latest", "--headless"]
     }
   }
 }
