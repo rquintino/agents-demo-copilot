@@ -10,7 +10,7 @@ You'll use **GitHub Copilot** — an AI coding assistant — to explore how agen
 
 ## How It Works
 
-Each lab is guided by Copilot itself. Open the **GitHub Copilot side panel** in **Agent** mode and type the slash command — Copilot will walk you through everything step by step.
+Each lab has a **README with step-by-step instructions and copy-paste prompts**. Open the README, follow the steps, and paste each prompt into the Copilot chat when you're ready.
 
 No coding experience needed. Copilot does all the technical work.
 
@@ -30,41 +30,43 @@ You (plain English) → Agent (AI that acts) → Skills (packaged expertise) →
 
 ## Before You Start (~2 min)
 
-Let Copilot check your environment and install everything you need.
+Open the **GitHub Copilot side panel** in **Agent mode** and paste this to check your environment:
 
-> In the Copilot side panel, type: `/setup-check`
+```
+Check my environment: run python3 --version, node --version, pnpm --version (or npm --version), and pip --version. Then install dependencies: pip install -r lab2-skills/requirements.txt && pip install -r lab3-mcp-server/requirements.txt && cd lab1-web-app && pnpm install. Report pass/fail for each.
+```
 
-Once you see all green, you're ready to go.
+Once everything passes, you're ready to go.
 
 ## Lab 1 — Vibe-Code a Web App (10 min)
 
 Build a working web app without writing any code — just by describing what you want.
 
-> In the Copilot side panel, type: `/lab1`
+> 📖 Open [`lab1-web-app/README.md`](lab1-web-app/README.md) and follow the steps.
 
 ## Lab 2 — AI Data Analysis (10 min)
 
 Analyze sales data by asking questions in plain English. Find the hidden anomaly.
 
-> In the Copilot side panel, type: `/lab2`
+> 📖 Open [`lab2-skills/README.md`](lab2-skills/README.md) and follow the steps.
 
 ## Lab 3 — Build an MCP Server (15 min)
 
 Build custom tools that Copilot can discover and use — the "USB for AI tools."
 
-> In the Copilot side panel, type: `/lab3`
+> 📖 Open [`lab3-mcp-server/README.md`](lab3-mcp-server/README.md) and follow the steps.
 
 ## Lab 4 — Give Copilot a Browser (10 min)
 
 Let Copilot browse the web, click buttons, and extract live information.
 
-> In the Copilot side panel, type: `/lab4`
+> 📖 Open [`lab4-playwright-mcp/README.md`](lab4-playwright-mcp/README.md) and follow the steps.
 
 ## Lab 5 — How These Labs Were Built (10 min)
 
 Go behind the curtain — see the prompt files that power these labs and create your own.
 
-> In the Copilot side panel, type: `/lab5`
+> 📖 Open [`lab5-prompt-engineering/README.md`](lab5-prompt-engineering/README.md) and follow the steps.
 
 ## Wrap-Up
 
