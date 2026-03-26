@@ -23,7 +23,7 @@ Each lab has its own **README** with step-by-step instructions and **copy-paste 
 2. Open a lab's README (e.g., [`lab1-web-app/README.md`](lab1-web-app/README.md))
 3. Follow the steps — copy each prompt into Copilot chat when ready
 
-> 💡 **Alternatively**, if you have Copilot slash commands available, you can also type `/lab1`, `/lab2`, etc. in the Copilot panel. Both approaches work — the READMEs give you more control over pacing.
+> 💡 **Tip:** The `.github/prompts/` folder also contains prompt files that power slash commands (`/lab1`, `/lab2`, etc.) in Copilot. If your environment supports them, you can use those instead — but the READMEs give you more control over pacing.
 
 ### Quick Setup Check
 
